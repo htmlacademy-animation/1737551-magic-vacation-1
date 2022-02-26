@@ -9,7 +9,15 @@
   &--hidden {
     display: none;
   }
-
+  &.active {
+    .intro__message {
+      opacity: 1;
+      transform: none;
+    }
+    .form__field {
+      transform: scaleX(1); 
+    }
+  }
   @media (max-width: $tablet) and (orientation: portrait) {
     min-height: calc(var(--vh, 1vh) * 100);
   }
