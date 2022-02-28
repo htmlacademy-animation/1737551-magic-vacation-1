@@ -63,6 +63,24 @@ body {
       overflow: hidden;
     }
   }
+  &._loaded {
+    .page-header__menu, .page-header__logo, .screen__footer  {
+      transform: none;
+      opacity: 1;
+      transition-timing-function: cubic-bezier(0,.74,.52,.82);
+    }
+    .page-header__menu a.active:after  {
+      transform: scale(1);
+      transition-duration: .5s;
+      transform-origin: left;
+    }
+    .social-block__toggler::before {
+      animation: backScale 1s cubic-bezier(.1,-0.13,.57,1.93);
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+    }
+  }
 }
 
 a {
