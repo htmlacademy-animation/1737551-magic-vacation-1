@@ -54,6 +54,10 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
+  transform: translateY(100%);
+  opacity: 0;
+  transition-property: transform;
+  transition-duration: .8s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
@@ -80,7 +84,6 @@
 
 .screen__footer-wrapper {
   @include container;
-
   @media (max-width: $tablet) and (orientation: portrait) {
     opacity: 0;
 
