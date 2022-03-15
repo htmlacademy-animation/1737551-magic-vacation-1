@@ -10,12 +10,61 @@
     display: none;
   }
   &.active {
-    .intro__message {
-      opacity: 1;
-      transform: none;
+    &.screen--intro {
+      .intro__message {
+        opacity: 1;
+        transform: none;
+      }
+    } 
+    &.screen--game {
+      .form__field {
+        transform: scaleX(1); 
+      }
     }
-    .form__field {
-      transform: scaleX(1); 
+    &.screen--rules {
+      .rules__item {
+        &::before {
+          background-color: $c-purple;
+          color: inherit;
+          transform: scale(1);
+        }
+        p {
+          transform: none;
+          opacity: 1;
+        }
+        &:nth-child(2) {
+          &::before {
+            transition-delay: .25s, .25s, .35s;
+          }
+          p {
+            transition-delay: .4s;
+          }
+        }
+        &:nth-child(3) {
+          &::before {
+            transition-delay: .45s, .45s, .55s;
+          }
+          p {
+            transition-delay: .6s;
+          }
+        }
+        &:nth-child(4) {
+          &::before {
+            transition-delay: .65s, .65s, .75s;
+          }
+          p {
+            transition-delay: .8s;
+          }
+        }
+      }
+      .rules__link {
+        color: #5f458c;
+        &::before {
+          left: 50%;
+          width: 100%;
+          opacity: 1;
+        }
+      }
     }
   }
   @media (max-width: $tablet) and (orientation: portrait) {
